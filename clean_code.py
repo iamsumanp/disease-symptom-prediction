@@ -196,7 +196,7 @@ def NaiveBayes():
 
 
 root = Tk()
-root.configure(background='grey')
+root.configure(background='#2b2b2a')
 
 # entry variables
 Symptom1 = StringVar()
@@ -213,11 +213,11 @@ Name = StringVar()
 
 # Heading
 w2 = Label(root, justify=LEFT,
-           text="Disease Predictor using symptoms with Machine Learning", fg="white", bg="grey")
-w2.config(font=("Raleway", 30))
+           text="Disease Predictor using symptoms with Machine Learning", fg="white", bg="#2b2b2a")
+w2.config(font=("Helvetica", 30))
 w2.grid(row=1, column=0, columnspan=2, padx=100)
-w2 = Label(root, justify=LEFT, text="AI Project ", fg="white", bg="grey")
-w2.config(font=("Aharoni", 30))
+w2 = Label(root, justify=LEFT, text="AI Project ", fg="white", bg="#2b2b2a")
+w2.config(font=("Helvetica", 30))
 w2.grid(row=2, column=0, columnspan=2, padx=100)
 
 # labels
