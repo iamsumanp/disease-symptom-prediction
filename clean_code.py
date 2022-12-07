@@ -219,12 +219,12 @@ Name = StringVar()
 
 # Heading
 w2 = Label(root, justify=LEFT,
-           text="Disease Predictor using symptoms with Machine Learning", fg="white", bg="#2b2b2a")
+           text="Disease Predictor using symptoms.", fg="white", bg="#2b2b2a")
 w2.config(font=("Helvetica", 30))
-w2.grid(row=1, column=0, columnspan=2, padx=100)
+w2.grid(row=1, column=0, columnspan=2, padx=350, pady=10)
 w2 = Label(root, justify=LEFT, text="AI Project ", fg="white", bg="#2b2b2a")
 w2.config(font=("Helvetica", 30))
-w2.grid(row=2, column=0, columnspan=2, padx=100)
+w2.grid(row=2, column=0, columnspan=2, padx=350)
 
 # labels
 NameLb = Label(root, text="Name of the Patient", fg="yellow", bg="black")
@@ -247,13 +247,14 @@ S5Lb = Label(root, text="Symptom 5", fg="yellow", bg="black")
 S5Lb.grid(row=16, column=0, pady=10, sticky=N)
 
 
-lrLb = Label(root, text="DecisionTree", fg="green", bg="yellow")
+lrLb = Label(root, text="Algorithm 1: DecisionTree", fg="green", bg="yellow")
 lrLb.grid(row=12, column=1, pady=10, )
 
-destreeLb = Label(root, text="RandomForest", fg="green", bg="yellow")
+destreeLb = Label(root, text="Algorithm 2: RandomForest",
+                  fg="green", bg="yellow")
 destreeLb.grid(row=14, column=1, pady=10, )
 
-ranfLb = Label(root, text="NaiveBayes", fg="green", bg="yellow")
+ranfLb = Label(root, text="Algorithm 3: NaiveBayes", fg="green", bg="yellow")
 ranfLb.grid(row=16, column=1, pady=10, )
 
 # entries
@@ -278,29 +279,38 @@ S5En = OptionMenu(root, Symptom5, *OPTIONS)
 S5En.grid(row=17, column=0)
 
 
-S2Lb = Label(root, text="Select algorithm", fg="yellow", bg="black")
+S2Lb = Label(root, text="Results:", fg="yellow", bg="black")
 S2Lb.grid(row=6, column=1, pady=10)
 
-dst = Button(root, text="DecisionTree",
-             command=DecisionTree, bg="yellow", fg="green")
+dst = Button(root, text="Click here",
+             command=lambda: [DecisionTree(), randomforest(), NaiveBayes()], bg="#4267B2", fg="white")
 dst.grid(row=8, column=1, padx=10)
 
-rnf = Button(root, text="Randomforest",
-             command=randomforest, bg="yellow", fg="green")
-rnf.grid(row=9, column=1, padx=10)
 
-lr = Button(root, text="NaiveBayes",
-            command=NaiveBayes, bg="yellow", fg="green")
-lr.grid(row=10, column=1, padx=10)
+S2Lb2 = Label(root, text="Different algorithm might show different results!",
+              fg="white", bg="black")
+S2Lb2.grid(row=10, column=1, pady=10)
+
+# rnf = Button(root, text="Randomforest",
+#              command=randomforest, bg="yellow", fg="green")
+# rnf.grid(row=9, column=1, padx=10)
+
+# lr = Button(root, text="NaiveBayes",
+#             command=NaiveBayes, bg="yellow", fg="green")
+# lr.grid(row=10, column=1, padx=10)
 
 # textfileds
-t1 = Text(root, height=1, width=40, bg="green", fg="white")
+t1 = Text(root, height=1, width=40, bg="#282A3A", fg="white")
 t1.grid(row=13, column=1, padx=10)
 
-t2 = Text(root, height=1, width=40, bg="green", fg="white")
+t2 = Text(root, height=1, width=40, bg="#282A3A", fg="white")
 t2.grid(row=15, column=1, padx=10)
 
-t3 = Text(root, height=1, width=40, bg="green", fg="white")
+t3 = Text(root, height=1, width=40, bg="#282A3A", fg="white")
 t3.grid(row=17, column=1, padx=10)
+
+S2Lb2 = Label(root, text="Note: Hence, the symptoms given by the user are the symptoms for the Diseases shown by algorithms in the result shown above.",
+              fg="white", bg="#2b2b2a")
+S2Lb2.grid(row=20, column=1, pady=10)
 
 root.mainloop()
