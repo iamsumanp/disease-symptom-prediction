@@ -44,7 +44,7 @@ for x in range(0, len(symptomsArr)):
 #     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
-# TESTING DATA df -------------------------------------------------------------------------------------
+# TRAINING DATA df -------------------------------------------------------------------------------------
 df = pd.read_csv("Training.csv")
 
 df.replace({'prognosis': {'Fungal infection': 0, 'Allergy': 1, 'GERD': 2, 'Chronic cholestasis': 3, 'Drug Reaction': 4,
@@ -65,7 +65,7 @@ y = df[["prognosis"]]
 np.ravel(y)
 # print(y)
 
-# TRAINING DATA tr --------------------------------------------------------------------------------
+# TESTING DATA tr --------------------------------------------------------------------------------
 tr = pd.read_csv("Testing.csv")
 tr.replace({'prognosis': {'Fungal infection': 0, 'Allergy': 1, 'GERD': 2, 'Chronic cholestasis': 3, 'Drug Reaction': 4,
                           'Peptic ulcer diseae': 5, 'AIDS': 6, 'Diabetes ': 7, 'Gastroenteritis': 8, 'Bronchial Asthma': 9, 'Hypertension ': 10,
