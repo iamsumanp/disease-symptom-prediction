@@ -129,7 +129,7 @@ def randomforest():
     clf4 = RandomForestClassifier()
     clf4 = clf4.fit(X, np.ravel(y))
 
-    # calculating accuracy-------------------------------------------------------------------
+    # calculating accuracy-------------------------------------------------------------------currently 95%
     from sklearn.metrics import accuracy_score
     y_pred = clf4.predict(X_test)
     print(accuracy_score(y_test, y_pred))
